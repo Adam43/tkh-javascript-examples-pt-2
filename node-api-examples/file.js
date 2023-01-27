@@ -1,10 +1,10 @@
-// const fs = require("fs");
+const fs = require("fs");
 
-// // (function () {
-// // //   const fileContent = fs.readFileSync("./example/index.txt");
+(function () {
+  const fileContent = fs.readFileSync("./example/index.txt");
 
-// // //   console.log(fileContent.toString()); //Should print whatever is put into the file
-
+  console.log(fileContent.toString()); //Should print whatever is put into the file
+})();
 // // const dir = "./"
 // // fs.readdir(dir, (err, content) => {
 // //   if (err) {
@@ -29,23 +29,23 @@
 //   })
 //For the next one, let's open a folder and read all it's files and the file's contents;
 
-const fs = require("fs");
+// const fs = require("fs");
 
-(function () {
-  fs.readdir("./", function(err, content) {
-    if(err){
-      throw err;
-    } else {
-      content.forEach(fileOrFolder => {
-        const splitName = fileOrFolder.split(".");
+// (function () {
+//   fs.readdir("./", function(err, content) {
+//     if(err){
+//       throw err;
+//     } else {
+//       content.forEach(fileOrFolder => {
+//         const splitName = fileOrFolder.split(".");
 
-        if(splitName.length >= 2) {
-          console.log("This is a file");
-        } else {
-          const folderContents = fs.readdirSync(fileOrFolder);
-          console.log(folderContents)
-        }
-      })
-    }
-  })
-})()
+//         if(splitName.length >= 2) {
+//           console.log("This is a file");
+//         } else {
+//           const folderContents = fs.readdirSync(fileOrFolder);
+//           console.log(folderContents)
+//         }
+//       })
+//     }
+//   })
+// })()
