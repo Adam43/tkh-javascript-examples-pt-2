@@ -12,19 +12,22 @@ describe("Testing the server", () => {
                     done();
                 }
             });
-    
+            
         });
     });
+})
     
     describe("Testing the /data route", () => {
         it("/data should get back a 200", (done) => {
-            done();
-        })
-        it("/data should display my name", (done) => {
-            done()
+            request(server).get("/data").expect(200).end((error) => {
+                if(error){
+                    throw error;
+                } else {
+                    done();
+                }
+            })
         });
-    });
-
+      
     it("/data should display my name", (done) => {
         request(server).get("/data").expect(200).end((error, reponse) => {
             if(error) {
